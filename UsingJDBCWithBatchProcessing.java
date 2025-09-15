@@ -54,6 +54,7 @@ public class UsingJDBCWithBatchProcessing {
                     insertPS.setString(5, company);
 
                     insertPS.addBatch();
+                    insertPS.executeBatch();
                     System.out.println("Insert query added to batch!");
                 }
 
@@ -87,6 +88,7 @@ public class UsingJDBCWithBatchProcessing {
                         updatePS.setString(1, company);
                         updatePS.setInt(2, id);
                         updatePS.addBatch();
+                        updatePS.executeBatch();
                         System.out.println("Update query added to batch!");
                     } else {
                         System.out.println("No record found with ID: " + id);
@@ -100,6 +102,7 @@ public class UsingJDBCWithBatchProcessing {
 
                     deletePS.setInt(1, id);
                     deletePS.addBatch();
+                    deletePS.executeBatch();
                     System.out.println("Delete query added to batch!");
                 }
 
